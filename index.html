@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Paradise | Premium Wood-Fired Pizzeria & Interactive Experience</title>
+  <meta name="description" content="Welcome to Pizza Paradise — craft artisan wood-fired pizzas, interactive pizza minigames, menu customization, and authentic Italian taste.">
+  <meta name="keywords" content="pizza, artisan pizza, food website, wood-fired pizza, pizza builder, pizza games">
+  
+  <!-- SEO OpenGraph Tags -->
+  <meta property="og:title" content="Pizza Paradise - Premium Pizzeria">
+  <meta property="og:description" content="Experience the finest wood-fired pizzas with custom topping builder and minigames.">
+  <meta property="og:type" content="website">
+
+  <!-- Style link -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Schema.org JSON-LD SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Pizza Paradise",
+    "image": "images.jfif",
+    "priceRange": "$$",
+    "servesCuisine": "Italian",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Artisan Way",
+      "addressLocality": "Foodie City",
+      "addressRegion": "NY",
+      "postalCode": "10001"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">🍕</span>
+      <span>PIZZA <span class="gold-text">PARADISE</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#builder">Pizza Builder</a></li>
+      <li><a href="#games">Minigames</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+    <a href="#menu" class="nav-btn">Order Now</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <canvas id="particle-canvas"></canvas>
+    
+    <div class="hero-content">
+      <div class="badge">✨ Wood-Fired Perfection</div>
+      <h1 class="kinetic-title">
+        <span class="kinetic-word neon-text">CRAFT</span>
+        <span class="kinetic-word gold-text">ARTISAN</span>
+        <span class="kinetic-word">PIZZA</span>
+      </h1>
+      <p class="hero-subtitle">Hand-stretched dough, 800° wood-fired ovens, and organic Italian ingredients delivered piping hot to your table.</p>
+      
+      <div class="hero-cta">
+        <a href="#builder" class="btn-brutal">Create Pizza 🍕</a>
+        <a href="#games" class="btn-secondary">Play Minigames 🎮</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-img-wrapper">
+        <img src="images.jfif" alt="Artisan Wood-Fired Pizza" class="hero-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Art Deco Divider -->
+  <div class="art-deco-divider">
+    <div class="art-deco-diamond"></div>
+  </div>
+
+  <!-- Story Section -->
+  <section class="section" id="story">
+    <div class="story-grid">
+      <div class="story-img-frame">
+        <img src="images (1).jfif" alt="Fresh Artisan Dough Making" class="story-img">
+      </div>
+      <div class="story-text">
+        <div class="badge">🔥 Heritage & Passion</div>
+        <h3>Baked in Flames, Served with Heart</h3>
+        <p>Since 1988, Pizza Paradise has combined Neapolitan traditions with contemporary flavors. Our dough ferments for 48 hours to create a airy, charred crust that melts in your mouth.</p>
+        <p>Every sauce is slow-cooked from San Marzano tomatoes, and our cheese is freshly pulled mozzarella crafted daily by our master pizzaiolos.</p>
+        <a href="#menu" class="btn-secondary">Explore Our Craft</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="section" id="menu">
+    <div class="section-header">
+      <h2 class="section-title gold-text">Artisan Menu</h2>
+      <p class="section-subtitle">Select from our signature oven-baked handcrafted pizzas</p>
+    </div>
+
+    <div class="menu-filters">
+      <button class="filter-btn active" data-filter="all">All Pizzas</button>
+      <button class="filter-btn" data-filter="classic">Classics</button>
+      <button class="filter-btn" data-filter="specialty">Specialty</button>
+      <button class="filter-btn" data-filter="veggie">Vegetarian</button>
+    </div>
+
+    <div class="menu-grid">
+      <!-- Menu Item 1 -->
+      <div class="menu-card" data-category="classic">
+        <img src="images (2).jfif" alt="Margherita Supreme" class="menu-card-img">
+        <div class="menu-card-body">
+          <div class="card-header">
+            <h3 class="card-title">Margherita Supreme</h3>
+            <span class="card-price">$16.99</span>
+          </div>
+          <p class="card-desc">San Marzano tomatoes, fresh buffalo mozzarella, organic basil, extra virgin olive oil drizzle.</p>
+          <a href="#builder" class="btn-brutal" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Customize</a>
+        </div>
+      </div>
+
+      <!-- Menu Item 2 -->
+      <div class="menu-card" data-category="specialty">
+        <img src="images (3).jfif" alt="Truffle Pepperoni Rush" class="menu-card-img">
+        <div class="menu-card-body">
+          <div class="card-header">
+            <h3 class="card-title">Pepperoni Truffle</h3>
+            <span class="card-price">$19.99</span>
+          </div>
+          <p class="card-desc">Double crispy pepperoni, black truffle oil infusion, aged parmesan, chili honey glaze.</p>
+          <a href="#builder" class="btn-brutal" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Customize</a>
+        </div>
+      </div>
+
+      <!-- Menu Item 3 -->
+      <div class="menu-card" data-category="veggie">
+        <img src="images (4).jfif" alt="Garden Feast" class="menu-card-img">
+        <div class="menu-card-body">
+          <div class="card-header">
+            <h3 class="card-title">Garden Feast</h3>
+            <span class="card-price">$17.49</span>
+          </div>
+          <p class="card-desc">Fire-roasted bell peppers, portobello mushrooms, kalamata olives, artichoke hearts, vegan cheese.</p>
+          <a href="#builder" class="btn-brutal" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Customize</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Pizza Builder Section -->
+  <section class="section" id="builder">
+    <div class="section-header">
+      <h2 class="section-title neon-text">Custom Pizza Builder</h2>
+      <p class="section-subtitle">Craft your dream pie in real-time</p>
+    </div>
+
+    <div class="builder-container">
+      <div class="pizza-preview">
+        <div class="topping-layer" id="topping-layer"></div>
+      </div>
+
+      <div class="builder-controls">
+        <h3>Select Your Toppings</h3>
+        
+        <div class="topping-options">
+          <div>
+            <input type="checkbox" id="top-pep" class="topping-checkbox" value="pepperoni" data-price="2.50">
+            <label for="top-pep" class="topping-label">🍕 Pepperoni (+$2.50)</label>
+          </div>
+          <div>
+            <input type="checkbox" id="top-mush" class="topping-checkbox" value="mushrooms" data-price="1.80">
+            <label for="top-mush" class="topping-label">🍄 Mushrooms (+$1.80)</label>
+          </div>
+          <div>
+            <input type="checkbox" id="top-olive" class="topping-checkbox" value="olives" data-price="1.50">
+            <label for="top-olive" class="topping-label">🫒 Olives (+$1.50)</label>
+          </div>
+          <div>
+            <input type="checkbox" id="top-basil" class="topping-checkbox" value="basil" data-price="1.00">
+            <label for="top-basil" class="topping-label">🌿 Fresh Basil (+$1.00)</label>
+          </div>
+          <div>
+            <input type="checkbox" id="top-onion" class="topping-checkbox" value="onions" data-price="1.20">
+            <label for="top-onion" class="topping-label">🧅 Red Onions (+$1.20)</label>
+          </div>
+          <div>
+            <input type="checkbox" id="top-cheese" class="topping-checkbox" value="extraCheese" data-price="2.00">
+            <label for="top-cheese" class="topping-label">🧀 Extra Cheese (+$2.00)</label>
+          </div>
+        </div>
+
+        <div class="builder-summary">
+          <div>
+            <span style="color: var(--cream-muted);">Total Price:</span>
+            <div id="total-price" style="font-size: 2rem; font-weight: 800; color: var(--accent-gold);">$14.99</div>
+          </div>
+          <button class="btn-brutal">Order Custom Pie 🚀</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Minigames Section -->
+  <section class="section" id="games">
+    <div class="section-header">
+      <h2 class="section-title gold-text">Pizza Arcade Minigames</h2>
+      <p class="section-subtitle">Play minigames and unlock discount codes for your next order!</p>
+    </div>
+
+    <div class="games-tab-nav">
+      <button class="game-tab-btn active" data-game="catcher-box">🍕 Topping Catcher</button>
+      <button class="game-tab-btn" data-game="memory-box">🎴 Pizza Memory Match</button>
+      <button class="game-tab-btn" data-game="wheel-box">🎡 Discount Wheel</button>
+    </div>
+
+    <!-- Game 1: Catcher -->
+    <div class="game-box active" id="catcher-box">
+      <h3>Catch the Falling Toppings!</h3>
+      <p style="color: var(--cream-muted); margin-bottom: 1rem;">Move your mouse left & right to catch toppings on your crust!</p>
+      <div style="margin-bottom: 1rem; font-size: 1.2rem;">Score: <span id="catcher-score" style="color: var(--accent-neon); font-weight: 800;">0</span></div>
+      <canvas id="catcher-canvas" width="400" height="300"></canvas>
+      <br><br>
+      <button id="start-catcher" class="btn-brutal">Start Catcher Game 🎮</button>
+    </div>
+
+    <!-- Game 2: Memory -->
+    <div class="game-box" id="memory-box">
+      <h3>Pizza Memory Match</h3>
+      <p style="color: var(--cream-muted);">Match pairs of toppings to win a free dip coupon!</p>
+      <div class="memory-grid" id="memory-grid"></div>
+    </div>
+
+    <!-- Game 3: Wheel -->
+    <div class="game-box" id="wheel-box">
+      <h3>Spin the Pizza Wheel</h3>
+      <p style="color: var(--cream-muted);">Spin for a chance to get up to 20% OFF!</p>
+      <div class="wheel-container">
+        <div class="wheel-pointer"></div>
+        <div class="wheel" id="wheel"></div>
+      </div>
+      <button id="spin-btn" class="btn-brutal">Spin Wheel 🎡</button>
+      <div id="wheel-result" style="margin-top: 1.5rem; font-size: 1.3rem; font-weight: 800; color: var(--accent-gold);"></div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section" id="gallery">
+    <div class="section-header">
+      <h2 class="section-title">Oven Fresh Gallery</h2>
+      <p class="section-subtitle">Take a peek inside our pizzeria</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images.jfif" alt="Pizza 1"></div>
+      <div class="gallery-item"><img src="images (1).jfif" alt="Pizza 2"></div>
+      <div class="gallery-item"><img src="images (2).jfif" alt="Pizza 3"></div>
+      <div class="gallery-item"><img src="images (3).jfif" alt="Pizza 4"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-info">
+        <a href="#" class="logo">
+          <span class="logo-icon">🍕</span>
+          <span>PIZZA <span class="gold-text">PARADISE</span></span>
+        </a>
+        <p>Crafting authentic wood-fired pizzas with modern flare and passion. Open 7 days a week.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#builder">Pizza Builder</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Arcade</h4>
+        <ul>
+          <li><a href="#games">Topping Catcher</a></li>
+          <li><a href="#games">Memory Match</a></li>
+          <li><a href="#games">Discount Wheel</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <p style="color: var(--cream-muted);">📍 123 Artisan Way, NY</p>
+        <p style="color: var(--cream-muted);">📞 (555) 839-2019</p>
+        <p style="color: var(--cream-muted);">✉️ hello@pizzaparadise.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Pizza Paradise. All rights reserved. Premium Artisan Experience.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
