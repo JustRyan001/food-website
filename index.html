@@ -1,314 +1,771 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pizza Paradise | Premium Wood-Fired Pizzeria & Interactive Experience</title>
-  <meta name="description" content="Welcome to Pizza Paradise — craft artisan wood-fired pizzas, interactive pizza minigames, menu customization, and authentic Italian taste.">
-  <meta name="keywords" content="pizza, artisan pizza, food website, wood-fired pizza, pizza builder, pizza games">
-  
-  <!-- SEO OpenGraph Tags -->
-  <meta property="og:title" content="Pizza Paradise - Premium Pizzeria">
-  <meta property="og:description" content="Experience the finest wood-fired pizzas with custom topping builder and minigames.">
-  <meta property="og:type" content="website">
+  <!-- ══════════════════════════════════════════════════════
+       SEO & META
+       ══════════════════════════════════════════════════════ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Style link -->
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- Schema.org JSON-LD SEO -->
+  <title>Pizza Paradise — Premium Artisan Pizza | Order &amp; Play</title>
+  <meta name="description" content="Pizza Paradise serves handcrafted, wood-fired artisan pizzas made with the finest ingredients. Order online, build your dream pizza, and play our interactive pizza minigames!" />
+  <meta name="keywords" content="pizza, artisan pizza, wood-fired pizza, margherita, pepperoni, pizza delivery, pizza restaurant, pizza builder" />
+  <meta name="author" content="Pizza Paradise" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.pizzaparadise.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Pizza Paradise — Premium Artisan Pizza" />
+  <meta property="og:description" content="Handcrafted wood-fired artisan pizzas. Build your own, play pizza games, and experience paradise in every slice." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://www.pizzaparadise.com/" />
+  <meta property="og:image"       content="images (1).jfif" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Pizza Paradise — Premium Artisan Pizza" />
+  <meta name="twitter:description" content="Build your pizza, play games, order online. Paradise in every slice." />
+
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Pizza Paradise",
-    "image": "images.jfif",
-    "priceRange": "$$",
-    "servesCuisine": "Italian",
+    "description": "Premium artisan wood-fired pizza restaurant",
+    "url": "https://www.pizzaparadise.com",
+    "telephone": "+1-800-PIZZA-PP",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Artisan Way",
-      "addressLocality": "Foodie City",
-      "addressRegion": "NY",
-      "postalCode": "10001"
-    }
+      "streetAddress": "123 Slice Avenue",
+      "addressLocality": "Flavor Town",
+      "postalCode": "12345",
+      "addressCountry": "US"
+    },
+    "servesCuisine": "Italian",
+    "priceRange": "$$",
+    "openingHours": "Mo-Su 11:00-23:00",
+    "image": "images (1).jfif",
+    "hasMenu": "https://www.pizzaparadise.com/#menu"
   }
   </script>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar" id="navbar">
-    <a href="#" class="logo">
-      <span class="logo-icon">🍕</span>
-      <span>PIZZA <span class="gold-text">PARADISE</span></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#hero" class="active">Home</a></li>
-      <li><a href="#story">Our Story</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#builder">Pizza Builder</a></li>
-      <li><a href="#games">Minigames</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-    </ul>
-    <a href="#menu" class="nav-btn">Order Now</a>
-  </nav>
+  <!-- ══════════════════════════════════════════════════════
+       NAVIGATION
+       ══════════════════════════════════════════════════════ -->
+  <header>
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Pizza Paradise home">
+        <span class="nav-logo-icon" aria-hidden="true">🍕</span>
+        Pizza Paradise
+      </a>
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <canvas id="particle-canvas"></canvas>
-    
-    <div class="hero-content">
-      <div class="badge">✨ Wood-Fired Perfection</div>
-      <h1 class="kinetic-title">
-        <span class="kinetic-word neon-text">CRAFT</span>
-        <span class="kinetic-word gold-text">ARTISAN</span>
-        <span class="kinetic-word">PIZZA</span>
-      </h1>
-      <p class="hero-subtitle">Hand-stretched dough, 800° wood-fired ovens, and organic Italian ingredients delivered piping hot to your table.</p>
-      
-      <div class="hero-cta">
-        <a href="#builder" class="btn-brutal">Create Pizza 🍕</a>
-        <a href="#games" class="btn-secondary">Play Minigames 🎮</a>
-      </div>
-    </div>
+      <ul class="nav-links" role="list">
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#builder">Builder</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#menu" class="nav-cta" id="nav-order-btn">Order Now</a></li>
+      </ul>
 
-    <div class="hero-visual">
-      <div class="hero-img-wrapper">
-        <img src="images.jfif" alt="Artisan Wood-Fired Pizza" class="hero-img">
-      </div>
-    </div>
-  </section>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-  <!-- Art Deco Divider -->
-  <div class="art-deco-divider">
-    <div class="art-deco-diamond"></div>
-  </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="#story">Our Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#builder">Pizza Builder</a>
+      <a href="#games">🎮 Minigames</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Story Section -->
-  <section class="section" id="story">
-    <div class="story-grid">
-      <div class="story-img-frame">
-        <img src="images (1).jfif" alt="Fresh Artisan Dough Making" class="story-img">
-      </div>
-      <div class="story-text">
-        <div class="badge">🔥 Heritage & Passion</div>
-        <h3>Baked in Flames, Served with Heart</h3>
-        <p>Since 1988, Pizza Paradise has combined Neapolitan traditions with contemporary flavors. Our dough ferments for 48 hours to create a airy, charred crust that melts in your mouth.</p>
-        <p>Every sauce is slow-cooked from San Marzano tomatoes, and our cheese is freshly pulled mozzarella crafted daily by our master pizzaiolos.</p>
-        <a href="#menu" class="btn-secondary">Explore Our Craft</a>
-      </div>
-    </div>
-  </section>
+  <main>
 
-  <!-- Menu Section -->
-  <section class="section" id="menu">
-    <div class="section-header">
-      <h2 class="section-title gold-text">Artisan Menu</h2>
-      <p class="section-subtitle">Select from our signature oven-baked handcrafted pizzas</p>
-    </div>
+    <!-- ════════════════════════════════════════════════════
+         HERO SECTION
+         ════════════════════════════════════════════════════ -->
+    <section id="hero" aria-label="Welcome to Pizza Paradise">
+      <canvas id="particles-canvas" aria-hidden="true"></canvas>
+      <div class="hero-bg-image" aria-hidden="true"></div>
+      <div class="hero-bg-gradient" aria-hidden="true"></div>
 
-    <div class="menu-filters">
-      <button class="filter-btn active" data-filter="all">All Pizzas</button>
-      <button class="filter-btn" data-filter="classic">Classics</button>
-      <button class="filter-btn" data-filter="specialty">Specialty</button>
-      <button class="filter-btn" data-filter="veggie">Vegetarian</button>
-    </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">★ &nbsp; Est. 1987 — Authentic Italian &nbsp; ★</p>
 
-    <div class="menu-grid">
-      <!-- Menu Item 1 -->
-      <div class="menu-card" data-category="classic">
-        <img src="images (2).jfif" alt="Margherita Supreme" class="menu-card-img">
-        <div class="menu-card-body">
-          <div class="card-header">
-            <h3 class="card-title">Margherita Supreme</h3>
-            <span class="card-price">$16.99</span>
-          </div>
-          <p class="card-desc">San Marzano tomatoes, fresh buffalo mozzarella, organic basil, extra virgin olive oil drizzle.</p>
-          <a href="#builder" class="btn-brutal" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Customize</a>
+        <h1 class="hero-title" id="hero-title">
+          <span class="line-1" data-kinetic="PIZZA">PIZZA</span><br />
+          <span class="line-2" data-kinetic="PARADISE">PARADISE</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Hand-stretched dough. Wood-fired ovens. Ingredients flown in from Naples.
+          This isn't just pizza — this is a <em>religion</em>.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#menu"    class="btn btn-primary"  id="hero-menu-btn">🍕 Explore Menu</a>
+          <a href="#builder" class="btn btn-outline"  id="hero-build-btn">✨ Build Your Pizza</a>
         </div>
       </div>
 
-      <!-- Menu Item 2 -->
-      <div class="menu-card" data-category="specialty">
-        <img src="images (3).jfif" alt="Truffle Pepperoni Rush" class="menu-card-img">
-        <div class="menu-card-body">
-          <div class="card-header">
-            <h3 class="card-title">Pepperoni Truffle</h3>
-            <span class="card-price">$19.99</span>
-          </div>
-          <p class="card-desc">Double crispy pepperoni, black truffle oil infusion, aged parmesan, chili honey glaze.</p>
-          <a href="#builder" class="btn-brutal" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Customize</a>
+      <div class="hero-stats" aria-label="Pizza Paradise highlights">
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="127" data-suffix="+">127+</div>
+          <div class="hero-stat-label">Pizzas on Menu</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="38" data-suffix="yr" data-year-start="2025">38yr</div>
+          <div class="hero-stat-label">Years of Craft</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="50000" data-suffix="+">50000+</div>
+          <div class="hero-stat-label">Happy Slices</div>
         </div>
       </div>
 
-      <!-- Menu Item 3 -->
-      <div class="menu-card" data-category="veggie">
-        <img src="images (4).jfif" alt="Garden Feast" class="menu-card-img">
-        <div class="menu-card-body">
-          <div class="card-header">
-            <h3 class="card-title">Garden Feast</h3>
-            <span class="card-price">$17.49</span>
-          </div>
-          <p class="card-desc">Fire-roasted bell peppers, portobello mushrooms, kalamata olives, artichoke hearts, vegan cheese.</p>
-          <a href="#builder" class="btn-brutal" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Customize</a>
-        </div>
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Interactive Pizza Builder Section -->
-  <section class="section" id="builder">
-    <div class="section-header">
-      <h2 class="section-title neon-text">Custom Pizza Builder</h2>
-      <p class="section-subtitle">Craft your dream pie in real-time</p>
-    </div>
-
-    <div class="builder-container">
-      <div class="pizza-preview">
-        <div class="topping-layer" id="topping-layer"></div>
-      </div>
-
-      <div class="builder-controls">
-        <h3>Select Your Toppings</h3>
-        
-        <div class="topping-options">
-          <div>
-            <input type="checkbox" id="top-pep" class="topping-checkbox" value="pepperoni" data-price="2.50">
-            <label for="top-pep" class="topping-label">🍕 Pepperoni (+$2.50)</label>
-          </div>
-          <div>
-            <input type="checkbox" id="top-mush" class="topping-checkbox" value="mushrooms" data-price="1.80">
-            <label for="top-mush" class="topping-label">🍄 Mushrooms (+$1.80)</label>
-          </div>
-          <div>
-            <input type="checkbox" id="top-olive" class="topping-checkbox" value="olives" data-price="1.50">
-            <label for="top-olive" class="topping-label">🫒 Olives (+$1.50)</label>
-          </div>
-          <div>
-            <input type="checkbox" id="top-basil" class="topping-checkbox" value="basil" data-price="1.00">
-            <label for="top-basil" class="topping-label">🌿 Fresh Basil (+$1.00)</label>
-          </div>
-          <div>
-            <input type="checkbox" id="top-onion" class="topping-checkbox" value="onions" data-price="1.20">
-            <label for="top-onion" class="topping-label">🧅 Red Onions (+$1.20)</label>
-          </div>
-          <div>
-            <input type="checkbox" id="top-cheese" class="topping-checkbox" value="extraCheese" data-price="2.00">
-            <label for="top-cheese" class="topping-label">🧀 Extra Cheese (+$2.00)</label>
-          </div>
+    <!-- ════════════════════════════════════════════════════
+         OUR STORY
+         ════════════════════════════════════════════════════ -->
+    <section id="story" aria-labelledby="story-heading">
+      <div class="story-grid container">
+        <div class="story-image-wrapper reveal">
+          <img src="images (1).jfif" alt="Chef hand-stretching fresh pizza dough in our wood-fired kitchen" class="story-img" loading="lazy" />
+          <span class="deco-corner tl" aria-hidden="true"></span>
+          <span class="deco-corner tr" aria-hidden="true"></span>
+          <span class="deco-corner bl" aria-hidden="true"></span>
+          <span class="deco-corner br" aria-hidden="true"></span>
         </div>
 
-        <div class="builder-summary">
-          <div>
-            <span style="color: var(--cream-muted);">Total Price:</span>
-            <div id="total-price" style="font-size: 2rem; font-weight: 800; color: var(--accent-gold);">$14.99</div>
+        <div class="story-text reveal reveal-delay-2">
+          <span class="section-label">Our Story</span>
+          <h2 class="section-title" id="story-heading">
+            Born in Naples,<br />Loved Worldwide
+          </h2>
+          <p style="color: var(--text-muted); line-height: 1.9; margin-bottom: 16px;">
+            In 1987, Chef Marco Rossi carried his grandmother's centuries-old recipe from a tiny kitchen in Naples to the world stage. Every pizza we make is a love letter to tradition — stretched by hand, fired in a 900°F wood oven, and topped with ingredients we source directly from the volcanic soils of Campania.
+          </p>
+          <p style="color: var(--text-muted); line-height: 1.9;">
+            We don't rush. Great pizza takes time, passion, and a generous pour of olive oil. Welcome to Paradise.
+          </p>
+
+          <div class="story-badges">
+            <span class="story-badge">🔥 Wood-Fired Oven</span>
+            <span class="story-badge">🌿 Organic Ingredients</span>
+            <span class="story-badge">✈️ Imported from Naples</span>
+            <span class="story-badge">⭐ Michelin Rated</span>
           </div>
-          <button class="btn-brutal">Order Custom Pie 🚀</button>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Interactive Minigames Section -->
-  <section class="section" id="games">
-    <div class="section-header">
-      <h2 class="section-title gold-text">Pizza Arcade Minigames</h2>
-      <p class="section-subtitle">Play minigames and unlock discount codes for your next order!</p>
-    </div>
+    <!-- ════════════════════════════════════════════════════
+         MENU SECTION
+         ════════════════════════════════════════════════════ -->
+    <section id="menu" aria-labelledby="menu-heading">
+      <div class="container text-center">
+        <span class="section-label reveal">Our Menu</span>
+        <h2 class="section-title reveal reveal-delay-1" id="menu-heading">
+          Crafted with Fire &amp; Passion
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          Each pizza is a masterpiece. Fresh dough daily, premium toppings, and baked to perfection in our wood-fired oven.
+        </p>
 
-    <div class="games-tab-nav">
-      <button class="game-tab-btn active" data-game="catcher-box">🍕 Topping Catcher</button>
-      <button class="game-tab-btn" data-game="memory-box">🎴 Pizza Memory Match</button>
-      <button class="game-tab-btn" data-game="wheel-box">🎡 Discount Wheel</button>
-    </div>
+        <div class="deco-divider reveal reveal-delay-3" aria-hidden="true">
+          <div class="deco-diamond"></div>
+          <div class="deco-diamond" style="width:6px;height:6px"></div>
+          <div class="deco-diamond"></div>
+        </div>
 
-    <!-- Game 1: Catcher -->
-    <div class="game-box active" id="catcher-box">
-      <h3>Catch the Falling Toppings!</h3>
-      <p style="color: var(--cream-muted); margin-bottom: 1rem;">Move your mouse left & right to catch toppings on your crust!</p>
-      <div style="margin-bottom: 1rem; font-size: 1.2rem;">Score: <span id="catcher-score" style="color: var(--accent-neon); font-weight: 800;">0</span></div>
-      <canvas id="catcher-canvas" width="400" height="300"></canvas>
-      <br><br>
-      <button id="start-catcher" class="btn-brutal">Start Catcher Game 🎮</button>
-    </div>
+        <!-- Filter Pills -->
+        <div class="filter-pills" role="group" aria-label="Filter pizzas by category">
+          <button class="filter-pill active" data-filter="all"     aria-pressed="true">All Pizzas</button>
+          <button class="filter-pill"        data-filter="classic" aria-pressed="false">🍅 Classic</button>
+          <button class="filter-pill"        data-filter="premium" aria-pressed="false">⭐ Premium</button>
+          <button class="filter-pill"        data-filter="veggie"  aria-pressed="false">🥦 Veggie</button>
+          <button class="filter-pill"        data-filter="spicy"   aria-pressed="false">🌶️ Spicy</button>
+        </div>
 
-    <!-- Game 2: Memory -->
-    <div class="game-box" id="memory-box">
-      <h3>Pizza Memory Match</h3>
-      <p style="color: var(--cream-muted);">Match pairs of toppings to win a free dip coupon!</p>
-      <div class="memory-grid" id="memory-grid"></div>
-    </div>
+        <!-- Menu Grid -->
+        <div class="menu-grid" role="list">
 
-    <!-- Game 3: Wheel -->
-    <div class="game-box" id="wheel-box">
-      <h3>Spin the Pizza Wheel</h3>
-      <p style="color: var(--cream-muted);">Spin for a chance to get up to 20% OFF!</p>
-      <div class="wheel-container">
-        <div class="wheel-pointer"></div>
-        <div class="wheel" id="wheel"></div>
+          <!-- Card 1 -->
+          <article class="menu-card glass-card reveal" data-category="classic" role="listitem">
+            <div class="menu-card-img-wrap">
+              <img src="images.jfif" alt="Classic Margherita pizza with fresh mozzarella and basil" loading="lazy" />
+              <span class="menu-card-badge">Classic</span>
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">La Margherita</h3>
+              <p class="menu-card-desc">San Marzano tomato, buffalo mozzarella DOP, fresh basil, extra virgin olive oil.</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">$16</span>
+                <button class="menu-card-order" id="order-margherita">Add to Order</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="menu-card glass-card reveal reveal-delay-1" data-category="classic" role="listitem">
+            <div class="menu-card-img-wrap">
+              <img src="images (2).jfif" alt="Pepperoni pizza with crispy pepperoni and melted mozzarella" loading="lazy" />
+              <span class="menu-card-badge">Bestseller</span>
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">Diavola Supreme</h3>
+              <p class="menu-card-desc">Spicy Calabrian salami, smoked mozzarella, roasted peppers, chilli oil.</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">$19</span>
+                <button class="menu-card-order" id="order-diavola">Add to Order</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="menu-card glass-card reveal reveal-delay-2" data-category="premium" role="listitem">
+            <div class="menu-card-img-wrap">
+              <img src="images (3).jfif" alt="Truffle pizza with black truffle shavings and parmesan" loading="lazy" />
+              <span class="menu-card-badge" style="background:var(--accent-gold);color:#0d0500">Premium</span>
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">Tartufo Nero</h3>
+              <p class="menu-card-desc">Black truffle paste, fontina, porcini mushrooms, fresh truffle shavings, aged parmesan.</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">$34</span>
+                <button class="menu-card-order" id="order-tartufo">Add to Order</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="menu-card glass-card reveal" data-category="veggie" role="listitem">
+            <div class="menu-card-img-wrap">
+              <img src="images (4).jfif" alt="Veggie pizza with colorful bell peppers, mushrooms and olives" loading="lazy" />
+              <span class="menu-card-badge" style="background:#2d6a4f">Veggie</span>
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">Giardino Verde</h3>
+              <p class="menu-card-desc">Pesto base, zucchini, roasted peppers, kalamata olives, burrata, lemon zest.</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">$21</span>
+                <button class="menu-card-order" id="order-giardino">Add to Order</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="menu-card glass-card reveal reveal-delay-1" data-category="spicy" role="listitem">
+            <div class="menu-card-img-wrap">
+              <img src="images.jfif" alt="Spicy Inferno pizza with jalapeños and hot honey" loading="lazy"
+                   style="filter:hue-rotate(10deg) saturate(1.3)" />
+              <span class="menu-card-badge" style="background:#9b2226">🌶️ Spicy</span>
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">Inferno &amp; Honey</h3>
+              <p class="menu-card-desc">Arrabiata sauce, mozzarella, jalapeños, Calabrian chilli, finished with hot honey drizzle.</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">$22</span>
+                <button class="menu-card-order" id="order-inferno">Add to Order</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="menu-card glass-card reveal reveal-delay-2" data-category="premium" role="listitem">
+            <div class="menu-card-img-wrap">
+              <img src="images (2).jfif" alt="Quattro Stagioni seasonal pizza divided into four sections" loading="lazy" />
+              <span class="menu-card-badge" style="background:var(--accent-gold);color:#0d0500">Premium</span>
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">Quattro Stagioni</h3>
+              <p class="menu-card-desc">Four seasons: artichokes, prosciutto, mushrooms &amp; olives — each quadrant a new world.</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">$28</span>
+                <button class="menu-card-order" id="order-quattro">Add to Order</button>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /menu-grid -->
       </div>
-      <button id="spin-btn" class="btn-brutal">Spin Wheel 🎡</button>
-      <div id="wheel-result" style="margin-top: 1.5rem; font-size: 1.3rem; font-weight: 800; color: var(--accent-gold);"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Gallery Section -->
-  <section class="section" id="gallery">
-    <div class="section-header">
-      <h2 class="section-title">Oven Fresh Gallery</h2>
-      <p class="section-subtitle">Take a peek inside our pizzeria</p>
-    </div>
+    <!-- ════════════════════════════════════════════════════
+         PIZZA BUILDER
+         ════════════════════════════════════════════════════ -->
+    <section id="builder" aria-labelledby="builder-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:56px">
+          <span class="section-label reveal">Interactive</span>
+          <h2 class="section-title reveal reveal-delay-1" id="builder-heading">Build Your Dream Pizza</h2>
+          <p class="section-subtitle reveal reveal-delay-2">Choose your crust, sauce, cheese &amp; toppings. Watch it come to life.</p>
+        </div>
 
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="images.jfif" alt="Pizza 1"></div>
-      <div class="gallery-item"><img src="images (1).jfif" alt="Pizza 2"></div>
-      <div class="gallery-item"><img src="images (2).jfif" alt="Pizza 3"></div>
-      <div class="gallery-item"><img src="images (3).jfif" alt="Pizza 4"></div>
-    </div>
-  </section>
+        <div class="builder-layout">
 
-  <!-- Footer -->
+          <!-- Pizza Canvas Preview -->
+          <div class="pizza-preview-wrap reveal">
+            <div id="pizza-canvas-container">
+              <div id="pizza-canvas" role="img" aria-label="Pizza preview" aria-live="polite">
+                <div id="pizza-sauce-layer" style="position:absolute;inset:0;border-radius:50%;transition:background 0.4s;pointer-events:none"></div>
+                <div class="pizza-toppings-layer" id="pizza-toppings" aria-hidden="true"></div>
+              </div>
+            </div>
+
+            <div class="builder-price-display">
+              <div class="builder-price-label">Your Total</div>
+              <div class="builder-price-value" id="builder-price">$0.00</div>
+            </div>
+
+            <div style="margin-top:20px;text-align:center">
+              <button class="btn-brutal" id="builder-order-btn" style="width:100%;padding:16px;font-size:1.1rem">
+                🛒 Place Order
+              </button>
+            </div>
+          </div>
+
+          <!-- Builder Steps -->
+          <div class="builder-steps">
+
+            <!-- Step 1: Base -->
+            <div class="builder-step active reveal">
+              <div class="step-header">
+                <div class="step-num">1</div>
+                <div class="step-title">Choose Your Crust</div>
+              </div>
+              <div class="option-grid">
+                <button class="option-btn" data-base="thin"   id="base-thin">
+                  <span class="opt-icon">🫓</span>Thin Crust<br/><small style="color:var(--text-muted)">$8</small>
+                </button>
+                <button class="option-btn" data-base="thick"  id="base-thick">
+                  <span class="opt-icon">🍞</span>Thick Crust<br/><small style="color:var(--text-muted)">$9</small>
+                </button>
+                <button class="option-btn" data-base="cheese" id="base-cheese">
+                  <span class="opt-icon">🧀</span>Cheese Crust<br/><small style="color:var(--text-muted)">$11</small>
+                </button>
+                <button class="option-btn" data-base="gluten" id="base-gluten">
+                  <span class="opt-icon">🌾</span>Gluten-Free<br/><small style="color:var(--text-muted)">$13</small>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Sauce -->
+            <div class="builder-step reveal reveal-delay-1">
+              <div class="step-header">
+                <div class="step-num">2</div>
+                <div class="step-title">Choose Your Sauce</div>
+              </div>
+              <div class="option-grid">
+                <button class="option-btn" data-sauce="tomato" id="sauce-tomato">
+                  <span class="opt-icon">🍅</span>Tomato<br/><small style="color:var(--text-muted)">Free</small>
+                </button>
+                <button class="option-btn" data-sauce="white" id="sauce-white">
+                  <span class="opt-icon">🥛</span>White<br/><small style="color:var(--text-muted)">+$1</small>
+                </button>
+                <button class="option-btn" data-sauce="pesto" id="sauce-pesto">
+                  <span class="opt-icon">🌿</span>Pesto<br/><small style="color:var(--text-muted)">+$2</small>
+                </button>
+                <button class="option-btn" data-sauce="bbq" id="sauce-bbq">
+                  <span class="opt-icon">🍖</span>BBQ<br/><small style="color:var(--text-muted)">+$2</small>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3: Toppings -->
+            <div class="builder-step reveal reveal-delay-2">
+              <div class="step-header">
+                <div class="step-num">3</div>
+                <div class="step-title">Add Toppings (max 8)</div>
+              </div>
+              <div class="option-grid" style="grid-template-columns:repeat(auto-fill,minmax(80px,1fr))">
+                <button class="option-btn" data-topping="🧀" id="top-cheese">
+                  <span class="opt-icon">🧀</span>Mozzarella<br/><small style="color:var(--text-muted)">+$2</small>
+                </button>
+                <button class="option-btn" data-topping="🍅" id="top-tomato">
+                  <span class="opt-icon">🍅</span>Tomatoes<br/><small style="color:var(--text-muted)">+$1</small>
+                </button>
+                <button class="option-btn" data-topping="🌶️" id="top-chilli">
+                  <span class="opt-icon">🌶️</span>Jalapeños<br/><small style="color:var(--text-muted)">+$1.5</small>
+                </button>
+                <button class="option-btn" data-topping="🫒" id="top-olive">
+                  <span class="opt-icon">🫒</span>Olives<br/><small style="color:var(--text-muted)">+$1.5</small>
+                </button>
+                <button class="option-btn" data-topping="🍄" id="top-mushroom">
+                  <span class="opt-icon">🍄</span>Mushrooms<br/><small style="color:var(--text-muted)">+$2</small>
+                </button>
+                <button class="option-btn" data-topping="🧅" id="top-onion">
+                  <span class="opt-icon">🧅</span>Onions<br/><small style="color:var(--text-muted)">+$1</small>
+                </button>
+                <button class="option-btn" data-topping="🥓" id="top-bacon">
+                  <span class="opt-icon">🥓</span>Bacon<br/><small style="color:var(--text-muted)">+$3</small>
+                </button>
+                <button class="option-btn" data-topping="🍖" id="top-pepperoni">
+                  <span class="opt-icon">🍖</span>Pepperoni<br/><small style="color:var(--text-muted)">+$3</small>
+                </button>
+                <button class="option-btn" data-topping="🧄" id="top-garlic">
+                  <span class="opt-icon">🧄</span>Garlic<br/><small style="color:var(--text-muted)">+$1</small>
+                </button>
+                <button class="option-btn" data-topping="🫑" id="top-pepper">
+                  <span class="opt-icon">🫑</span>Peppers<br/><small style="color:var(--text-muted)">+$1.5</small>
+                </button>
+                <button class="option-btn" data-topping="🌿" id="top-basil">
+                  <span class="opt-icon">🌿</span>Basil<br/><small style="color:var(--text-muted)">+$1</small>
+                </button>
+                <button class="option-btn" data-topping="🍍" id="top-pineapple">
+                  <span class="opt-icon">🍍</span>Pineapple<br/><small style="color:var(--text-muted)">+$1.5</small>
+                </button>
+              </div>
+            </div>
+
+          </div><!-- /builder-steps -->
+        </div><!-- /builder-layout -->
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         MINIGAMES
+         ════════════════════════════════════════════════════ -->
+    <section id="games" aria-labelledby="games-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:48px">
+          <span class="section-label reveal">Arcade</span>
+          <h2 class="section-title reveal reveal-delay-1" id="games-heading">Pizza Minigames 🎮</h2>
+          <p class="section-subtitle reveal reveal-delay-2">
+            Take a break and play! Three addictive pizza-themed games await you.
+          </p>
+        </div>
+
+        <!-- Game Tabs -->
+        <div class="games-tabs" role="tablist" aria-label="Select a minigame">
+          <button class="game-tab active" data-game="game-catcher"  role="tab" id="tab-catcher"  aria-selected="true"  aria-controls="game-catcher">
+            🧺 Topping Catcher
+          </button>
+          <button class="game-tab"        data-game="game-memory"   role="tab" id="tab-memory"   aria-selected="false" aria-controls="game-memory">
+            🃏 Memory Match
+          </button>
+          <button class="game-tab"        data-game="game-wheel"    role="tab" id="tab-wheel"    aria-selected="false" aria-controls="game-wheel">
+            🎡 Spin the Wheel
+          </button>
+        </div>
+
+        <!-- ── Game 1: Topping Catcher ── -->
+        <div class="game-panel active" id="game-catcher" role="tabpanel" aria-labelledby="tab-catcher">
+          <div class="catcher-arena">
+            <div class="catcher-header">
+              <div class="catcher-score-display" id="catcher-score">SCORE: 0</div>
+              <div class="lives-display"          id="catcher-lives">❤️❤️❤️</div>
+              <div class="catcher-timer"          id="catcher-timer">⏱ 30s</div>
+            </div>
+
+            <div id="catcher-game-area" aria-label="Topping catcher game area" role="application">
+              <!-- Pan -->
+              <div id="catcher-pan" aria-hidden="true" style="left:50%"></div>
+
+              <!-- Start Overlay -->
+              <div class="catcher-overlay" id="catcher-overlay" style="display:flex">
+                <h3 class="catcher-overlay-title">🧺 Topping Catcher</h3>
+                <p>Move your mouse (or finger) to catch falling pizza toppings! Avoid the bad ones 💀. You have 3 lives and 30 seconds!</p>
+                <p style="font-size:0.8rem;color:var(--accent-neon)">✅ Catch good toppings for +10 pts &nbsp;|&nbsp; ❌ Bad ones cost a life</p>
+                <button class="btn-brutal" id="catcher-start">▶ Start Game</button>
+                <div id="catcher-final-wrap" style="display:none;text-align:center">
+                  <div class="catcher-final-score" id="catcher-final">0</div>
+                  <button class="btn-brutal-red" id="catcher-restart" style="margin-top:16px">🔄 Play Again</button>
+                </div>
+              </div>
+            </div>
+
+            <p style="font-size:0.75rem;color:var(--text-muted);margin-top:12px;text-align:center">
+              💡 Move mouse over the game area to control the pan • Mobile: drag your finger
+            </p>
+          </div>
+        </div>
+
+        <!-- ── Game 2: Memory Match ── -->
+        <div class="game-panel" id="game-memory" role="tabpanel" aria-labelledby="tab-memory">
+          <div class="glass-card" style="padding:28px">
+            <div class="memory-header">
+              <div class="memory-stat" id="memory-moves">Moves: 0</div>
+              <button class="btn-brutal" id="memory-restart" style="padding:8px 20px;font-size:0.9rem">🔄 New Game</button>
+              <div class="memory-stat" id="memory-timer">⏱ 0s</div>
+            </div>
+
+            <div class="memory-grid" id="memory-grid" role="grid" aria-label="Pizza memory match grid">
+              <!-- Cards generated by JS -->
+            </div>
+
+            <p style="font-size:0.78rem;color:var(--text-muted);text-align:center;margin-top:8px">
+              Flip cards to find matching pizza topping pairs! 🍕
+            </p>
+          </div>
+        </div>
+
+        <!-- ── Game 3: Spin the Wheel ── -->
+        <div class="game-panel" id="game-wheel" role="tabpanel" aria-labelledby="tab-wheel">
+          <div class="wheel-container">
+            <h3 style="font-family:'Playfair Display',serif;color:var(--accent-gold);text-align:center">
+              What pizza are you having today?
+            </h3>
+
+            <div class="wheel-wrap">
+              <div class="wheel-pointer" aria-hidden="true"></div>
+              <canvas id="wheel-canvas" width="320" height="320"
+                role="img" aria-label="Pizza spin wheel — click to spin"></canvas>
+            </div>
+
+            <button class="btn-brutal" id="spin-btn" style="padding:16px 48px;font-size:1.2rem">
+              🎡 SPIN THE WHEEL
+            </button>
+
+            <div class="wheel-result" id="wheel-result" aria-live="polite" aria-atomic="true">
+              Click the wheel or button to spin and discover your perfect pizza! 🍕
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /container -->
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         GALLERY
+         ════════════════════════════════════════════════════ -->
+    <section id="gallery" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:48px">
+          <span class="section-label reveal">Gallery</span>
+          <h2 class="section-title reveal reveal-delay-1" id="gallery-heading">Fresh From the Oven</h2>
+          <p class="section-subtitle reveal reveal-delay-2">Every slice tells a story. Click any photo for a closer look.</p>
+        </div>
+
+        <div class="gallery-grid reveal">
+          <div class="gallery-item" role="button" tabindex="0" aria-label="Open gallery image: Classic Margherita">
+            <img src="images.jfif"     alt="Classic Margherita pizza fresh from wood-fired oven"        loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-overlay-text">La Margherita</span></div>
+          </div>
+          <div class="gallery-item" role="button" tabindex="0" aria-label="Open gallery image: Diavola pizza">
+            <img src="images (2).jfif" alt="Diavola spicy pizza with Calabrian salami"                  loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-overlay-text">Diavola</span></div>
+          </div>
+          <div class="gallery-item" role="button" tabindex="0" aria-label="Open gallery image: Truffle pizza">
+            <img src="images (3).jfif" alt="Premium truffle pizza with black truffle shavings"           loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-overlay-text">Tartufo Nero</span></div>
+          </div>
+          <div class="gallery-item" role="button" tabindex="0" aria-label="Open gallery image: Veggie pizza">
+            <img src="images (4).jfif" alt="Fresh vegetarian pizza with colorful bell peppers"           loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-overlay-text">Giardino Verde</span></div>
+          </div>
+          <div class="gallery-item" role="button" tabindex="0" aria-label="Open gallery image: Artisan pizza">
+            <img src="images (1).jfif" alt="Artisan pizza being prepared in our Naples-inspired kitchen" loading="lazy" />
+            <div class="gallery-overlay"><span class="gallery-overlay-text">Artisan Craft</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         CONTACT
+         ════════════════════════════════════════════════════ -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:56px">
+          <span class="section-label reveal">Find Us</span>
+          <h2 class="section-title reveal reveal-delay-1" id="contact-heading">Come Visit Us</h2>
+          <p class="section-subtitle reveal reveal-delay-2">
+            Reserve a table, place an order, or just say hello. We love hearing from pizza lovers.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info -->
+          <div class="reveal">
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:28px;color:var(--accent-gold)">
+              Get in Touch
+            </h3>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">📍</div>
+              <div>
+                <div class="contact-info-label">Address</div>
+                <div class="contact-info-value">123 Slice Avenue, Flavor Town, FT 12345</div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">📞</div>
+              <div>
+                <div class="contact-info-label">Phone</div>
+                <div class="contact-info-value">+1 (800) PIZZA-PP</div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">✉️</div>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <div class="contact-info-value">hello@pizzaparadise.com</div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">🕐</div>
+              <div>
+                <div class="contact-info-label">Hours</div>
+                <div class="contact-info-value">Mon–Sun: 11:00 AM – 11:00 PM</div>
+              </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div style="margin-top:32px;padding:24px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-md)">
+              <h4 style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.1em;color:var(--accent-neon);margin-bottom:12px">
+                🍕 GET 10% OFF YOUR FIRST ORDER
+              </h4>
+              <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:14px">
+                Subscribe for exclusive deals, new pizza announcements &amp; insider deals.
+              </p>
+              <form id="newsletter-form" style="display:flex;gap:10px;flex-wrap:wrap" novalidate>
+                <input type="email" placeholder="your@email.com"
+                  class="form-input" style="flex:1;min-width:180px"
+                  id="newsletter-email" aria-label="Email address for newsletter" required />
+                <button type="submit" class="btn-brutal" style="white-space:nowrap">Subscribe →</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="reveal reveal-delay-2">
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:28px;color:var(--accent-gold)">
+              Send a Message
+            </h3>
+
+            <form class="contact-form" id="contact-form" novalidate aria-label="Contact form">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Marco Rossi" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="you@example.com" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" class="form-input" placeholder="Reservation, Feedback, Catering..." />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message</label>
+                <textarea id="contact-message" class="form-textarea" placeholder="Tell us what's on your mind — or what's on your pizza! 🍕"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" id="contact-submit" style="width:100%;justify-content:center;font-size:1rem">
+                🚀 Send Message
+              </button>
+            </form>
+          </div>
+
+        </div><!-- /contact-grid -->
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+  <!-- ════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════ -->
   <footer>
     <div class="footer-grid">
-      <div class="footer-info">
-        <a href="#" class="logo">
-          <span class="logo-icon">🍕</span>
-          <span>PIZZA <span class="gold-text">PARADISE</span></span>
+      <!-- Brand -->
+      <div>
+        <a href="#hero" class="nav-logo" style="font-size:1.2rem" aria-label="Pizza Paradise">
+          <span aria-hidden="true">🍕</span> Pizza Paradise
         </a>
-        <p>Crafting authentic wood-fired pizzas with modern flare and passion. Open 7 days a week.</p>
+        <p class="footer-brand-desc">
+          Crafting paradise one slice at a time since 1987. Wood-fired. Hand-stretched. Soul-nourishing.
+        </p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">👥</a>
+          <a href="#" class="social-link" aria-label="Twitter/X">🐦</a>
+          <a href="#" class="social-link" aria-label="TikTok">🎵</a>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#hero">Home</a></li>
+      <!-- Quick Links -->
+      <div>
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
           <li><a href="#story">Our Story</a></li>
-          <li><a href="#menu">Menu</a></li>
+          <li><a href="#menu">Full Menu</a></li>
           <li><a href="#builder">Pizza Builder</a></li>
+          <li><a href="#gallery">Gallery</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h4>Arcade</h4>
-        <ul>
-          <li><a href="#games">Topping Catcher</a></li>
-          <li><a href="#games">Memory Match</a></li>
-          <li><a href="#games">Discount Wheel</a></li>
+      <!-- Info -->
+      <div>
+        <h4 class="footer-col-title">Info</h4>
+        <ul class="footer-links">
+          <li><a href="#contact">Reservations</a></li>
+          <li><a href="#contact">Catering</a></li>
+          <li><a href="#contact">Gift Cards</a></li>
+          <li><a href="#contact">Careers</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h4>Contact Us</h4>
-        <p style="color: var(--cream-muted);">📍 123 Artisan Way, NY</p>
-        <p style="color: var(--cream-muted);">📞 (555) 839-2019</p>
-        <p style="color: var(--cream-muted);">✉️ hello@pizzaparadise.com</p>
+      <!-- Hours -->
+      <div>
+        <h4 class="footer-col-title">Hours</h4>
+        <ul class="footer-links" style="gap:6px">
+          <li style="color:var(--text-muted);font-size:0.88rem">Mon – Thu</li>
+          <li style="color:var(--cream);font-size:0.88rem;margin-bottom:8px">11:00 AM – 10:00 PM</li>
+          <li style="color:var(--text-muted);font-size:0.88rem">Fri – Sat</li>
+          <li style="color:var(--cream);font-size:0.88rem;margin-bottom:8px">11:00 AM – 11:00 PM</li>
+          <li style="color:var(--text-muted);font-size:0.88rem">Sunday</li>
+          <li style="color:var(--cream);font-size:0.88rem">12:00 PM – 9:00 PM</li>
+        </ul>
       </div>
     </div>
 
+    <!-- Bottom Bar -->
     <div class="footer-bottom">
-      &copy; 2026 Pizza Paradise. All rights reserved. Premium Artisan Experience.
+      <p>© 2026 Pizza Paradise. All rights reserved. Made with 🍕 &amp; ❤️</p>
+      <p>
+        <a href="#" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.3s"
+           onmouseover="this.style.color='var(--accent-neon)'"
+           onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
+        <a href="#" style="color:var(--text-muted);text-decoration:none;transition:color 0.3s"
+           onmouseover="this.style.color='var(--accent-neon)'"
+           onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
+      </p>
     </div>
   </footer>
+
+  <!-- Gallery Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">✕</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <!-- Toast Container (JS will inject toasts here) -->
+  <div class="toast-container" aria-live="polite" aria-atomic="true"></div>
 
   <script src="script.js"></script>
 </body>
